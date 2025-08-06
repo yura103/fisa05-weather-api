@@ -1,15 +1,9 @@
-# update_weather.py
-# pip install python-dotenv requests
 import requests
 import os
 from datetime import datetime
-from dotenv import load_dotenv
-
-# .env 파일을 현재 경로에서 찾아서 키=밸류 를 변수로 사용하는 패키지
-load_dotenv()
 
 # OpenWeather API 키
-API_KEY = os.getenv("WEATHER")
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
 CITY = "Seoul"
 URL = f"https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}&units=metric"
 
@@ -52,4 +46,3 @@ def update_readme():
 
 if __name__ == "__main__":
     update_readme()
-
